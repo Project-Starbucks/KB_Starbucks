@@ -5,18 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .title{ grid-area: title;}
+        /* tag */
+        img{
+            margin:5px;
+            display: block;
+        }
+
+        /* layout */
+        .outer{
+            width: 70%;
+            display: grid;
+            grid-template: 
+                'title title'
+                'picture detail'
+                'desc desc';
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+        }
+
+        /* title : name, sitemap*/
+        .title{ 
+            grid-area: title;
+        }
         .name, .sitemap{
             display: inline-block;
         }
-        /*사이트 breadcrumb*/
         .sitemap{
+            float: right;
             list-style-type: none;
             text-align: right;
-            float: right;
-            
         }
-
         .sitemap > li{
             display: inline;
         }
@@ -27,71 +47,49 @@
         .sitemap .icon1{
             display: block;
             float: left;
-          
         }
 
-        .pic{ grid-area: picture;}
-        .detail{ grid-area: detail;
-        padding-left: 30px;}
-        .desc{ grid-area: desc;}
-
-        .outer{
-            display: grid;
-            width: 70%;
-            grid-template: 
-                'title title'
-                'picture detail'
-                'desc desc';
-
+        /* pic : zoom, thumbnail */
+        .pic{ 
+            grid-area: picture;
+        }
+        .zoom{
+            width: 450px;
+        }
+        .thumbnail{
+            width: 50px;
         }
 
-        .container{
-            display: flex;
-            justify-content: center;
+        /* detail : subtitle, nutrition */
+        .detail{ 
+            grid-area: detail;
+            padding-left: 30px;
         }
-        #subtitle{
+        .subtitle{
             font-weight: bold;
         }
         .subtitle_2{
             color: gray;
         }
-
-        #detail-line{
+        .detail-line{
             border: 2px solid;
         }
-
-        img{
-            display: block;
-            margin:5px;
-        }
-        
-        #zoom{
-            width: 450px;
-        }
-
-        #thumbnail{
-            width: 50px;
-        }
-
-
-        #nutrition{
+        .nutrition{
             width: 100;
         }
-        #nutri-table{
-            table-layout: fixed;
+        .nutri-table{
+            width:100%;
             border-collapse: collapse;
-            width:100%
+            table-layout: fixed;
         }
-        #nutri-table > tr > td{
+        .nutri-table > tr > td{
             padding : 15px 1px;
         }
-        
         .tr1 > td{
             padding : 10px 0px;
             border-top:1px solid #ddd;
             border-bottom:1px solid #ddd;
         }
-
         .td2{
             border-right: 1px dotted #ddd;
             text-align: right;
@@ -99,27 +97,29 @@
         .td4{
             text-align: right;
         }
-
         .allergy{
             width: 100%;
+            padding: 10px 5px;
             background-color: #f4f4f2;
-            padding: 10px 5px
         }
-
         .icon2{
             display: inline-block;
-            
         }
         .my{
-            justify-content: center;
             width: 100%;
+            padding: 10px 30px;
             display: flex;
+            justify-content: center;
             align-items: center;
             background-color: white; color: black;
-            padding: 10px 30px;}
-
+            }
         .count{
             display:  inline-block;
+        }
+        
+        /* desc */
+        .desc{ 
+            grid-area: desc;
         }
 
     </style>
@@ -142,19 +142,19 @@
             </ol>
         </div>
         <div class="pic">
-            <img src="../images/img10.jpg" id="zoom">
-            <img src="../images/img10.jpg" id="thumbnail">
+            <img src="../images/img10.jpg" class="zoom" alt="작은 음료 이미지">
+            <img src="../images/img10.jpg" class="thumbnail" alt="큰 음료 이미지">
         </div>
         <div class="detail">
-            <h3 id="subtitle">나이트로 바닐라 크림</h3>
+            <h3 class="subtitle">나이트로 바닐라 크림</h3>
             <p class="subtitle_2">Nitro Vanilla Cream</p>
-            <hr id="detail-line">
+            <hr class="detail-line">
             <p>부드러운 목넘김의 나이트로 커피와 바닐라 크림의 매력을 한번에 느껴보세요!</p>
-            <div id="nutrition">
-                <table id="nutri-table">
+            <div class="nutrition">
+                <table class="nutri-table">
                     <tr class="tr1">
                         <td colspan="2" class="td1">제품 영양 정보</td>
-                        <td colspan="2" class="td4"  id="size">Tall(톨) / 355ml(12 fl oz)</td>
+                        <td colspan="2" class="td4"  class="size">Tall(톨) / 355ml(12 fl oz)</td>
                     </tr>
                     <tr>
                         <td>1회 제공량</td>
@@ -176,7 +176,7 @@
                     </tr>
                 </table>
                 <p class="allergy">알레르기 유발요인 : 우유</p>
-                <button class="my"><img class="icon2" src="../images/heart.png" alt="">나만의 음료로 등록</button>
+                <button class="my"><img class="icon2" src="../images/heart.png" alt="하트">나만의 음료로 등록</button>
             </div>
             <div class="count">
                 <p>수량: <input type="number" value="1"></p>
