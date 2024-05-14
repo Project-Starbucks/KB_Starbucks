@@ -1,6 +1,6 @@
 # KB_Starbucks
 
-## Style 순서 정리
+## CSS Style 순서 정리
 
 1. width
 2. height
