@@ -4,194 +4,217 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="../js/product.js"></script>
     <style>
         /* tag */
-        img{
-            margin:5px;
+        img {
+            margin: 5px;
             display: block;
         }
 
         /* layout */
-        .outer{
+        .outer {
             width: 70%;
             display: grid;
-            grid-template: 
+            grid-template:
                 'title title'
                 'picture detail'
                 'desc desc';
         }
-        .container{
+
+        .container {
             display: flex;
             justify-content: center;
         }
 
         /* title : name, sitemap*/
-        .title{ 
+        .title {
             grid-area: title;
         }
-        .name, .sitemap{
+
+        .name,
+        .sitemap {
             display: inline-block;
         }
-        .sitemap{
+
+        .sitemap {
             float: right;
             list-style-type: none;
             text-align: right;
         }
-        .sitemap > li{
+
+        .sitemap>li {
             display: inline;
         }
-        .sitemap a{
+
+        .sitemap a {
             text-decoration: none;
             color: black;
         }
-        .sitemap .icon1{
+
+        .sitemap .icon1 {
             display: block;
             float: left;
         }
 
         /* pic : zoom, thumbnail */
-        .pic{ 
+        .pic {
             grid-area: picture;
         }
-        .zoom{
+
+        .zoom {
             width: 450px;
         }
-        .thumbnail{
+
+        .thumbnail {
             width: 50px;
         }
 
         /* detail : subtitle, nutrition */
-        .detail{ 
+        .detail {
             grid-area: detail;
             padding-left: 30px;
         }
-        .subtitle{
+
+        .subtitle {
             font-weight: bold;
         }
-        .subtitle_2{
+
+        .subtitle_2 {
             color: gray;
         }
-        .detail-line{
+
+        .detail-line {
             border: 2px solid;
         }
-        .nutrition{
+
+        .nutrition {
             width: 100;
         }
-        .nutri-table{
-            width:100%;
+
+        .nutri-table {
+            width: 100%;
             border-collapse: collapse;
             table-layout: fixed;
         }
-        .nutri-table > tr > td{
-            padding : 15px 1px;
+
+        .nutri-table>tr>td {
+            padding: 15px 1px;
         }
-        .tr1 > td{
-            padding : 10px 0px;
-            border-top:1px solid #ddd;
-            border-bottom:1px solid #ddd;
+
+        .tr1>td {
+            padding: 10px 0px;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
         }
-        .td2{
+
+        .td2 {
             border-right: 1px dotted #ddd;
             text-align: right;
         }
-        .td4{
+
+        .td4 {
             text-align: right;
         }
-        .allergy{
+
+        .allergy {
             width: 100%;
             padding: 10px 5px;
             background-color: #f4f4f2;
         }
-        .icon2{
+
+        .icon2 {
             display: inline-block;
         }
-        .my{
+
+        .my {
             width: 100%;
             padding: 10px 30px;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: white; color: black;
-            }
-        .count{
-            display:  inline-block;
-        }
-        
-        /* desc */
-        .desc{ 
-            grid-area: desc;
+            background-color: white;
+            color: black;
         }
 
+        .count {
+            display: inline-block;
+        }
+
+        /* desc */
+        .desc {
+            grid-area: desc;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="outer">
-        <div class="title">
-            <h1 class="name"> 콜드브루</h1>
-            <ol class="sitemap">
-                <li><a href="#"><img class="icon1" src="../images/home.png" alt="홈"></a></li>
-                <li>></li>
-                <li><a href="#">MENU</a></li>
-                <li>></li>
-                <li><a href="#">음료</a></li>
-                <li>></li>
-                <li><a href="#">콜드브루</a></li>
-                <li>></li>
-                <li >나이트로 바닐라 크림</li>
-            </ol>
-        </div>
-        <div class="pic">
-            <img src="../images/img10.jpg" class="zoom" alt="작은 음료 이미지">
-            <img src="../images/img10.jpg" class="thumbnail" alt="큰 음료 이미지">
-        </div>
-        <div class="detail">
-            <h3 class="subtitle">나이트로 바닐라 크림</h3>
-            <p class="subtitle_2">Nitro Vanilla Cream</p>
-            <hr class="detail-line">
-            <p>부드러운 목넘김의 나이트로 커피와 바닐라 크림의 매력을 한번에 느껴보세요!</p>
-            <div class="nutrition">
-                <table class="nutri-table">
-                    <tr class="tr1">
-                        <td colspan="2" class="td1">제품 영양 정보</td>
-                        <td colspan="2" class="td4"  class="size">Tall(톨) / 355ml(12 fl oz)</td>
-                    </tr>
-                    <tr>
-                        <td>1회 제공량</td>
-                        <td class="td2">80</td>
-                        <td>나트륨</td>
-                        <td class="td4">40</td>
-                    </tr>
-                    <tr>
-                        <td>포화지방</td>
-                        <td class="td2">2</td>
-                        <td>당류</td>
-                        <td class="td4">10</td>
-                    </tr>
-                    <tr>
-                        <td>단백질</td>
-                        <td class="td2">1</td>
-                        <td>카페인</td>
-                        <td class="td4">232</td>
-                    </tr>
-                </table>
-                <p class="allergy">알레르기 유발요인 : 우유</p>
-                <button class="my"><img class="icon2" src="../images/heart.png" alt="하트">나만의 음료로 등록</button>
+            <div class="title">
+                <h1 class="name"> 콜드브루</h1>
+                <ol class="sitemap">
+                    <li><a href="#"><img class="icon1" src="../images/home.png" alt="홈"></a></li>
+                    <li>></li>
+                    <li><a href="#">MENU</a></li>
+                    <li>></li>
+                    <li><a href="#">음료</a></li>
+                    <li>></li>
+                    <li><a href="#">콜드브루</a></li>
+                    <li>></li>
+                    <li>나이트로 바닐라 크림</li>
+                </ol>
             </div>
-            <div class="count">
-                <p>수량: <input type="number" value="1"></p>
-                
+            <div class="pic">
+                <img  class="zoom">
+                <img  class="thumbnail">
             </div>
-            <button class="basket">장바구니 넣기</button>
-        </div>
-        <div class="desc">
-            <hr>
-            <p>부드러운 목넘김의 나이트로 커피와 바닐라 크림의 매력을 한번에 느껴보세요!</p>
+            <div class="detail">
+                <h3 class="subtitle"></h3>
+                <p class="subtitle_2"></p>
+                <hr class="detail-line">
+                <p class="explain"></p>
+                <div class="nutrition">
+                    <table class="nutri-table">
+                        <tr class="tr1">
+                            <td colspan="2" class="td1">제품 영양 정보</td>
+                            <td colspan="2" class="td4" class="size">Tall(톨) / 355ml(12 fl oz)</td>
+                        </tr>
+                        <tr>
+                            <td>1회 제공량</td>
+                            <td class="td2"></td>
+                            <td>나트륨</td>
+                            <td class="td4"></td>
+                        </tr>
+                        <tr>
+                            <td>포화지방</td>
+                            <td class="td2"></td>
+                            <td>당류</td>
+                            <td class="td4"></td>
+                        </tr>
+                        <tr>
+                            <td>단백질</td>
+                            <td class="td2"></td>
+                            <td>카페인</td>
+                            <td class="td4"></td>
+                        </tr>
+                    </table>
+                    <p class="allergy"></p>
+                    <button class="my"><img class="icon2" src="../images/heart.png" alt="하트">나만의 음료로 등록</button>
+                </div>
+                <div class="count">
+                    <p>수량: <input type="number" value="1"></p>
+
+                </div>
+                <button class="basket">장바구니 넣기</button>
+            </div>
+            <div class="desc">
+                <hr>
+                <p class="explain"></p>
+            </div>
         </div>
     </div>
-    </div>
-    
-    
+
+
 
 </body>
 </html>
