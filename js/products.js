@@ -17,7 +17,7 @@ window.onload = function(){
     let parentObj = document.querySelector("body")
     let containerDiv
 
-    for(let i =0; i<=arr_len; i++){
+    for(let i = 0; i < arr_len; i++){
         if(i % 4 ==0){
             containerDiv = document.createElement("div");
             containerDiv.setAttribute('class', 'g')
@@ -29,7 +29,7 @@ window.onload = function(){
 
         let imgElement = document.createElement("img")
         imgElement.setAttribute("src", "../images/coffee" + (i+1) + ".jpeg")
-        imgElement.setAttribute("alt", arr[i].name)
+        imgElement.setAttribute("alt", arr[i].code)
         divObj.appendChild(imgElement)
 
         let brObj = document.createElement("br")
@@ -45,7 +45,7 @@ window.onload = function(){
 
 
     // --- 상품 click event handler START ---
-    const tdObjs = document.querySelectorAll('div.g>div')
+    const tdObjs = document.querySelectorAll('div.g>div>img')
     tdObjs.forEach(function(tdObj, index){
         // 고전
         // tdObj.onclick = function(event){ // div>div>img
@@ -60,7 +60,7 @@ window.onload = function(){
             // console.log(event.currentTarget) // div
             // console.log(this) // window
             // alert('클릭됨')
-            const classValue = event.currentTarget.getAttribute('id')
+            const classValue = event.currentTarget.getAttribute('alt')
             console.log(classValue)
             // const prodNo = classValue.split(' ')[1]
             location.href = './product.html?prodNo=' + classValue
